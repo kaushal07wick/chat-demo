@@ -10,8 +10,8 @@ openai_api_key = st.sidebar.text_input('OpenAI API key', type='password')
 
 def generate_response(topic):
 	llm = OpenAI(model_name='text-davinci-003', openai_api_key=openai_api_key)
-	template = 'As an experienced hiring manager, tell me the key qualifications required for {job} role.'
-	prompt = PromptTemplate(input_variables=['job'], template=template)
+	template = 'As an experienced hiring manager, tell me the key qualifications required for {topic} role.'
+	prompt = PromptTemplate(input_variables=['topic'], template=template)
 	prompt_query = prompt.format(topic=topic)
 
 	#run the llm model and return or print out the response
@@ -26,4 +26,4 @@ with st.form('theform'):
 		st.warning('Please enter your OpenAI api key!', icon='⚠')
 	if submitted and openai_api_key.startswith('sk-'):
 		generate_response(topic_text)
-		
+
