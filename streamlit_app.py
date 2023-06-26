@@ -6,7 +6,7 @@ from langchain import PromptTemplate
 
 st.set_page_config(page_title="Personal AI Career Guide ")
 st.title('Personal Career Guide')
-st.caption("""This is a Personal Career Guiding bot, which helps you in taking neccessary steps to grow, excel or enter into a certain field, just enter your Field of interest and it would help you in properly managing all the stpes to excel in that.""")_
+st.caption("""This is a Personal Career Guiding bot, which helps you in taking neccessary steps to grow, excel or enter into a certain field, just enter your Field of interest and it would help you in properly managing all the stpes to excel in that.""")
 openai_api_key = st.sidebar.text_input('OpenAI API key', type='password')
 
 def generate_response(topic):
